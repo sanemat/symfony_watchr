@@ -6,8 +6,8 @@
 # Convenience Methods
 # --------------------------------------------------
 require 'rubygems'
-require 'bundler'
-Bundler.setup(:runtime)
+#require 'bundler'
+#Bundler.setup(:runtime)
 require 'screenout'
 def run(cmd)
   puts(cmd)
