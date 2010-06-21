@@ -1,13 +1,13 @@
 # Run me with:
 #
-#   $ watchr bin/symfony_watchr.rb
+#   $ BUNDLE_GEMFILE=/path/to/Gemfile watchr bin/symfony_watchr.rb
 
 # --------------------------------------------------
 # Convenience Methods
 # --------------------------------------------------
 require 'rubygems'
-#require 'bundler'
-#Bundler.setup(:runtime)
+require 'bundler'
+Bundler.setup(:runtime)
 require 'screenout'
 def run(cmd)
   puts(cmd)
