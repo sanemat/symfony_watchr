@@ -5,11 +5,10 @@
 # --------------------------------------------------
 # Convenience Methods
 # --------------------------------------------------
-#require 'rubygems'
-#require 'bundler'
-require File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib', 'screenout'))
-#Bundler.setup(:runtime)
-#require 'screenout'
+require 'rubygems'
+require 'bundler'
+Bundler.setup(:runtime)
+require 'screenout'
 def run(cmd)
   puts(cmd)
   str = `#{cmd}`
