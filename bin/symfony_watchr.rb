@@ -1,6 +1,6 @@
 # Run me with:
 #
-#   $ BUNDLE_GEMFILE=/path/to/Gemfile watchr bin/symfony_watchr.rb
+#   $ watchr bin/symfony_watchr.rb
 
 # --------------------------------------------------
 # Convenience Methods
