@@ -24,15 +24,24 @@ def parse(string)
     {:message => 'Failed', :color => :red}
   end
 end
-def run_all_tests
+def run_unit_tests
   cmd = "php symfony test:unit"
+  run(cmd)
+end
+def run_functional_tests
+  cmd = "php symfony test:functional"
+  run(cmd)
+end
+def run_all_tests
+  cmd = "php symfony test:all"
   run(cmd)
 end
 
 # --------------------------------------------------
 # Watchr Rules
 # --------------------------------------------------
-watch ( '^test.*/unit/.*\.php' ) {|m| run_all_tests }
+watch ( '^test.*/unit/.*\.php' ) {|m| run_unit_tests }
+watch ( '^test.*/functional/.*\.php' ) {|m| run_functional_tests }
 #watch( '^test.*/test_.*\.rb'   )   { |m| run( "ruby -rubygems %s"              % m[0] ) }
 #watch( '^lib/(.*)\.rb'         )   { |m| run( "ruby -rubygems test/test_%s.rb" % m[1] ) }
 #watch( '^lib/.*/(.*)\.rb'      )   { |m| run( "ruby -rubygems test/test_%s.rb" % m[1] ) }
