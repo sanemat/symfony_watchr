@@ -9,6 +9,7 @@ require 'rubygems'
 require 'screenout'
 Screenout::statusline = "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} %{=b wb}%Y-%m-%d %{=b wm}%c"
 def run(cmd)
+  Screenout::message('Testing', :black)
   puts(cmd)
   str = `#{cmd}`
   puts(str)
