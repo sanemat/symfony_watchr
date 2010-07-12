@@ -42,6 +42,7 @@ end
 # --------------------------------------------------
 watch ( '^test.*/unit/.*\.php' ) {|m| run_unit_tests }
 watch ( '^test.*/functional/.*\.php' ) {|m| run_functional_tests }
+watch ( '^lib.*/model/.*\.php' ) {|m| run_unit_tests }
 #watch( '^test.*/test_.*\.rb'   )   { |m| run( "ruby -rubygems %s"              % m[0] ) }
 #watch( '^lib/(.*)\.rb'         )   { |m| run( "ruby -rubygems test/test_%s.rb" % m[1] ) }
 #watch( '^lib/.*/(.*)\.rb'      )   { |m| run( "ruby -rubygems test/test_%s.rb" % m[1] ) }
