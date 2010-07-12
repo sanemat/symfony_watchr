@@ -28,8 +28,8 @@ def run_unit_tests
   cmd = "php symfony test:unit"
   run(cmd)
 end
-def run_functional_tests
-  cmd = "php symfony test:functional"
+def run_functional_tests(application)
+  cmd = "php symfony test:functional %s" % application
   run(cmd)
 end
 def run_all_tests
@@ -41,7 +41,7 @@ end
 # Watchr Rules
 # --------------------------------------------------
 watch ( '^test.*/unit/.*\.php' ) {|m| run_unit_tests }
-watch ( '^test.*/functional/.*\.php' ) {|m| run_functional_tests }
+watch ( '^test.*/functional/(.*)/.*\.php' ) {|m| run_functional_tests(m[1]) }
 watch ( '^lib.*/model/.*\.php' ) {|m| run_unit_tests }
 #watch( '^test.*/test_.*\.rb'   )   { |m| run( "ruby -rubygems %s"              % m[0] ) }
 #watch( '^lib/(.*)\.rb'         )   { |m| run( "ruby -rubygems test/test_%s.rb" % m[1] ) }
